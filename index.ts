@@ -16,7 +16,7 @@ app.get("/", (c) => c.text("Hello from backend!"));
 app.post('/new-high-score', async (c) => {
   const { username, score } = await c.req.json();
   const existing_user = await Score.findOne({ username }).exec();
-  if (existing_user?.score && existing_user.score > score) return c.json({ message: 'User already has a higher score' });
+  if (existing_user?.score && existing_user.score >= score) return c.json({ message: 'User already has a higher score' });
 
   const new_high_score = await Score.findOneAndUpdate(
     { username },
