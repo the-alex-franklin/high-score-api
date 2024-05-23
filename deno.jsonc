@@ -1,0 +1,17 @@
+{
+  "tasks": {
+    "start": "deno run -A --watch index.ts"
+  },
+  "imports": {
+    "mongoose": "npm:mongoose"
+  },
+  "deploy": {
+    "project": "451750d9-2812-4041-962b-d531c676873b",
+    "exclude": [
+      "**/node_modules"
+    ],
+    "include": [],
+    "entrypoint": "index.ts",
+    "allow": ["all"]
+  }
+}
