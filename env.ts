@@ -6,6 +6,9 @@ const env = await load();
 const validated_env = z.object({
   MONGO_ATLAS_USERNAME: z.string(),
   MONGO_ATLAS_PASSWORD: z.string(),
-}).parse(env);
+}).transform(Object.entries)
+.parse(env);
 
-export { validated_env as env }
+for (const [key, value] of validated_env) {
+  Deno.env.set(key, value);
+}

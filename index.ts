@@ -2,6 +2,7 @@ import { Hono } from 'hono/mod.ts';
 import { cors } from 'hono/middleware.ts'
 import { connect } from 'mongoose';
 import { Score } from "./score.model.ts";
+import './env.ts';
 
 const app = new Hono();
 app.use(cors());
