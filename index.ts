@@ -1,17 +1,13 @@
-import './env.ts';
-import { Hono } from 'https://deno.land/x/hono@v4.3.10/mod.ts';
+import { Hono } from 'hono/mod.ts';
+import { cors } from 'hono/middleware.ts'
 import { connect } from 'mongoose';
 import { Score } from "./score.model.ts";
+import { env } from "./env.ts";
 
 const app = new Hono();
+app.use(cors());
 
-const mongo_atlas_username = Deno.env.get('MONGO_ATLAS_USERNAME');
-const mongo_atlas_password = Deno.env.get('MONGO_ATLAS_PASSWORD');
-
-if (!mongo_atlas_username) throw new Error('MONGO_ATLAS_USERNAME is required');
-if (!mongo_atlas_password) throw new Error('MONGO_ATLAS_PASSWORD is required');
-
-connect(`mongodb+srv://${mongo_atlas_username}:${mongo_atlas_password}@cluster0.ycjf2yc.mongodb.net/high-score`)
+connect(`mongodb+srv://${env.MONGO_ATLAS_USERNAME}:${env.MONGO_ATLAS_PASSWORD}@cluster0.ycjf2yc.mongodb.net/high-score`)
   .then(() => console.log('Connected to MongoDB'))
   .catch((err) => console.error(err));
 
