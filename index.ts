@@ -17,10 +17,11 @@ app.get("/", (c) => c.text("Hello from backend!"));
 
 app.post('/new-high-score', async (c) => {
   const body = await c.req.json();
+  console.log(body)
 
   const result = Try(() => z.object({
-    username: z.string(),
-    score: z.number()
+    username: z.string().min(1),
+    score: z.coerce.number().min(1)
   }).parse(body))
 
   if (result.failure) return c.json({ message: 'Invalid request body' }, 400);
