@@ -3,20 +3,31 @@ import { cors } from 'hono/middleware.ts'
 import { connect } from 'mongoose';
 import { Score } from "./score.model.ts";
 import { env } from "./env.ts";
+import { z } from 'zod';
+import { Try } from './utils/functions/Try.ts';
 
 const app = new Hono();
 app.use(cors());
 
 connect(`mongodb+srv://${env.MONGO_ATLAS_USERNAME}:${env.MONGO_ATLAS_PASSWORD}@cluster0.ycjf2yc.mongodb.net/high-score`)
   .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error(err));
+  .catch(console.error);
 
 app.get("/", (c) => c.text("Hello from backend!"));
 
 app.post('/new-high-score', async (c) => {
-  const { username, score } = await c.req.json();
+  const body = await c.req.json();
+
+  const result = Try(() => z.object({
+    username: z.string(),
+    score: z.number()
+  }).parse(body))
+
+  if (result.failure) return c.json({ message: 'Invalid request body' }, 400);
+  const { username, score } = result.data;
+
   const existing_user = await Score.findOne({ username }).exec();
-  if (existing_user?.score && existing_user.score >= score) return c.json({ message: 'User already has a higher score' });
+  if (existing_user?.score && existing_user.score > score) return c.json({ message: 'User already has a higher score' });
 
   const new_high_score = await Score.findOneAndUpdate(
     { username },
@@ -28,7 +39,7 @@ app.post('/new-high-score', async (c) => {
 })
 
 app.get('/all-scores', async (c) => {
-  const scores = await Score.find().exec();
+  const scores = await Score.find().sort({ score: 'desc' }).exec();
 
   return c.json({ scores });
 })
