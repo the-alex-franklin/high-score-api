@@ -6,7 +6,8 @@
     "hono/": "https://deno.land/x/hono@v4.3.10/",
     "dotenv": "https://deno.land/std@0.224.0/dotenv/mod.ts",
     "zod": "https://deno.land/x/zod@v3.23.8/mod.ts",
-    "mongoose": "npm:mongoose"
+    "mongoose": "npm:mongoose",
+    "fp-try": "jsr:@2or3godzillas/fp-try"
   },
   "deploy": {
     "project": "451750d9-2812-4041-962b-d531c676873b",

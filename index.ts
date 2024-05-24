@@ -4,7 +4,7 @@ import { connect } from 'mongoose';
 import { Score } from "./score.model.ts";
 import { env } from "./env.ts";
 import { z } from 'zod';
-import { Try } from './try.ts';
+import { Try } from 'fp-try';
 
 const app = new Hono();
 app.use(cors());
@@ -16,8 +16,7 @@ connect(`mongodb+srv://${env.MONGO_ATLAS_USERNAME}:${env.MONGO_ATLAS_PASSWORD}@c
 app.get("/", (c) => c.text("Hello from backend!"));
 
 app.post('/new-high-score', async (c) => {
-  const body = await c.req.json();
-  console.log(body)
+  const body: unknown = await c.req.json();
 
   const result = Try(() => z.object({
     username: z.string().min(1),

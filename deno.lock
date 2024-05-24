@@ -2,8 +2,14 @@
   "version": "3",
   "packages": {
     "specifiers": {
+      "jsr:@2or3godzillas/fp-try": "jsr:@2or3godzillas/fp-try@1.0.3",
       "npm:mongoose": "npm:mongoose@8.3.3",
       "npm:zod": "npm:zod@3.23.8"
+    },
+    "jsr": {
+      "@2or3godzillas/fp-try@1.0.3": {
+        "integrity": "e4af7da6ad58b251a481cf5133bb3eae8573af7dc589e0aa25807c99106550c2"
+      }
     },
     "npm": {
       "@mongodb-js/saslprep@1.1.7": {
@@ -261,6 +267,7 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@2or3godzillas/fp-try",
       "npm:mongoose"
     ]
   }
