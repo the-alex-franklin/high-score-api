@@ -3,6 +3,8 @@
   "packages": {
     "specifiers": {
       "jsr:@2or3godzillas/fp-try": "jsr:@2or3godzillas/fp-try@1.1.1",
+      "npm:@types/node": "npm:@types/node@18.16.19",
+      "npm:fp-ts": "npm:fp-ts@2.16.5",
       "npm:mongoose": "npm:mongoose@8.4.0"
     },
     "jsr": {
@@ -16,6 +18,10 @@
         "dependencies": {
           "sparse-bitfield": "sparse-bitfield@3.0.3"
         }
+      },
+      "@types/node@18.16.19": {
+        "integrity": "sha512-IXl7o+R9iti9eBW4Wg2hx1xQDig183jj7YLn8F7udNceyfkbn1ZxmzZXuak20gR40D7pIkIY1kYGx5VIGbaHKA==",
+        "dependencies": {}
       },
       "@types/webidl-conversions@7.0.3": {
         "integrity": "sha512-CiJJvcRtIgzadHCYXw7dqEnMNRjhGZlYK05Mj9OyktqV8uVT8fD2BFOB7S1uwBE3Kj2Z+4UyPmFw/Ixgw/LAlA==",
@@ -36,6 +42,10 @@
         "dependencies": {
           "ms": "ms@2.1.2"
         }
+      },
+      "fp-ts@2.16.5": {
+        "integrity": "sha512-N8T8PwMSeTKKtkm9lkj/zSTAnPC/aJIIrQhnHxxkL0KLsRCNUPANksJOlMXxcKKCo7H1ORP3No9EMD+fP0tsdA==",
+        "dependencies": {}
       },
       "kareem@2.6.3": {
         "integrity": "sha512-C3iHfuGUXK2u8/ipq9LfjFfXFxAZMQJJq7vLS45r3D9Y2xQ/m4S8zaR4zMLFWh9AsNPXmcFfUDhTEO8UIC/V6Q==",
@@ -127,6 +137,70 @@
     "https://deno.land/std@0.224.0/dotenv/mod.ts": "0180eaeedaaf88647318811cdaa418cc64dc51fb08354f91f5f480d0a1309f7d",
     "https://deno.land/std@0.224.0/dotenv/parse.ts": "09977ff88dfd1f24f9973a338f0f91bbdb9307eb5ff6085446e7c423e4c7ba0c",
     "https://deno.land/std@0.224.0/dotenv/stringify.ts": "275da322c409170160440836342eaa7cf012a1d11a7e700d8ca4e7f2f8aa4615",
+    "https://deno.land/x/fp_ts@v2.11.4/Alt.ts": "c6dc9b09b7eda940e41038f987a20429efbafa8b594c2e3b2590929b9662a207",
+    "https://deno.land/x/fp_ts@v2.11.4/Alternative.ts": "6aa829f39ce6dd71b5de2e67069ad83a380499ec8b18830e670943dad1054c22",
+    "https://deno.land/x/fp_ts@v2.11.4/Applicative.ts": "b1ff911f447544153398e596a15b328db3c6d781313059cdcf8e34466f53a8b7",
+    "https://deno.land/x/fp_ts@v2.11.4/Apply.ts": "91c356f6f66916bb47a3cd6e4cbd0b867c6324cf3880a9f5f60d5bcc2da839d1",
+    "https://deno.land/x/fp_ts@v2.11.4/Array.ts": "798d412a8a4f364a730bfc90f856ab839decbbaccc3a470b0a0d279558d9844d",
+    "https://deno.land/x/fp_ts@v2.11.4/Bifunctor.ts": "9b3496dbedba8f4f994f4f640d28cc5266949e5a350d6cf9f023dc648aff6112",
+    "https://deno.land/x/fp_ts@v2.11.4/BooleanAlgebra.ts": "601a11f8a210bd8e2c6eabe20efe8aa060442b87d7231134a953d2f20f7889f8",
+    "https://deno.land/x/fp_ts@v2.11.4/Bounded.ts": "173c354582b731dce6dd104e1d525fa5320d37c8f433cd3d07f54440bb232062",
+    "https://deno.land/x/fp_ts@v2.11.4/BoundedDistributiveLattice.ts": "4c4ab4aa5652b4a5fd024c2031b44fa458a74489898cc4e51b03145aa0605436",
+    "https://deno.land/x/fp_ts@v2.11.4/BoundedJoinSemilattice.ts": "6e787586fa33e27589aec9b9bdcb052376999554b3f18c99ace560fc84b2d16e",
+    "https://deno.land/x/fp_ts@v2.11.4/BoundedLattice.ts": "ebdfddbe024a0fe21d29914d8faa6c8c65cfb3bea5b3d0bf14f3e499c572e29a",
+    "https://deno.land/x/fp_ts@v2.11.4/BoundedMeetSemilattice.ts": "8175a61f89b7bd03abb3acb99e32ac8e7205b68a1cac4ceb0f2aeea978952506",
+    "https://deno.land/x/fp_ts@v2.11.4/Chain.ts": "85d0ec8aeb96a062fdb80f1895c0272c9a54e710860c89709f3cbb3ac67239bc",
+    "https://deno.land/x/fp_ts@v2.11.4/ChainRec.ts": "5f0a88a9731481a881a79e7e61742e22c48c612f4e2e49d254306b1bc75cfebb",
+    "https://deno.land/x/fp_ts@v2.11.4/Comonad.ts": "4d2875a02fc103a5b05bfa04126d4ecf9f490f9cf33e1344d62161ee49e98420",
+    "https://deno.land/x/fp_ts@v2.11.4/Compactable.ts": "3de0964918b299d032f96eb97d7d705e42e0cd64d3ad1350c67d8336c987d0e0",
+    "https://deno.land/x/fp_ts@v2.11.4/Contravariant.ts": "9d2b06365f58b37bcca6275803735d2b737d6a790b54dd6d4088a9b1b656a0eb",
+    "https://deno.land/x/fp_ts@v2.11.4/DistributiveLattice.ts": "eeaef952c590ee1ec62bf3bf903d4dab1c1bb6aaac5d8ab7b5b41983591e0b7d",
+    "https://deno.land/x/fp_ts@v2.11.4/Either.ts": "8b31e8c8fb45723b430a9a37487f7aca0c7d765cf682e6f4c727111e049e565b",
+    "https://deno.land/x/fp_ts@v2.11.4/Endomorphism.ts": "d6f055996acd87d62b83b2e4488aafd682f995712abbec87294411db7fa6eaf4",
+    "https://deno.land/x/fp_ts@v2.11.4/Eq.ts": "1b87181763a58917df6e5faa07fda58808953803764dcc7e0580bbaf7392ab29",
+    "https://deno.land/x/fp_ts@v2.11.4/Extend.ts": "e46c5ed00fb422263f3c448188082780849b69d1cd33da48909e432ddac81b2f",
+    "https://deno.land/x/fp_ts@v2.11.4/Field.ts": "125aee4b06f5fad8c6137938dcd4ab2a0d8b61cd31e5ed140592e8fe7b5fb115",
+    "https://deno.land/x/fp_ts@v2.11.4/Filterable.ts": "34a5c2df7131c5b07ea2f1cb5c5e31ce6ea05fdd151d63297dc0d50852cefa49",
+    "https://deno.land/x/fp_ts@v2.11.4/FilterableWithIndex.ts": "f9633984c9c647348d68fe7fdad8981ec3120a1db6188c3ea3150799b93d888b",
+    "https://deno.land/x/fp_ts@v2.11.4/Foldable.ts": "33a67d5154f739830403e5d9c1536a8f7e1b559c6770b8cada22d85b0f038bb7",
+    "https://deno.land/x/fp_ts@v2.11.4/FoldableWithIndex.ts": "b8e1ed3c33fe8a3ccfac60befcf1bbc18a111d93800da5c82c422725142e4f0d",
+    "https://deno.land/x/fp_ts@v2.11.4/FromEither.ts": "edef9de6314ca65ff7cc8304e8d7e45b0731d1718c4afa482e16294bde05f427",
+    "https://deno.land/x/fp_ts@v2.11.4/Functor.ts": "ea4ad672027212168763d4827de8c501dbddcedab9af3c888808e4408b4484ab",
+    "https://deno.land/x/fp_ts@v2.11.4/FunctorWithIndex.ts": "5a6f8e5b512137645cc8ae91e5ee9397a53ba83c22337fb95b7b8270238bde22",
+    "https://deno.land/x/fp_ts@v2.11.4/HKT.ts": "4c565568046d3f95e944b1aea4143d9195c93a86d4b082bfdbcf685d4d6d903d",
+    "https://deno.land/x/fp_ts@v2.11.4/HeytingAlgebra.ts": "fda47a135e7f3e69a93ba02b254c1cbd03a8adbffdc77b274838ea804e42d5b1",
+    "https://deno.land/x/fp_ts@v2.11.4/JoinSemilattice.ts": "83b758f3070521127da3788d554def26492df79d0c66f574e4a7fdd8f73f44ea",
+    "https://deno.land/x/fp_ts@v2.11.4/Lattice.ts": "1b9a3c18b55f617598dd8abe2724600f52a4d81b915dd1ca5a50f53628225427",
+    "https://deno.land/x/fp_ts@v2.11.4/Magma.ts": "0c7f20604337fdb2fd3a3159a1e78c6f765a7f918d29ccbc9394855474f4a919",
+    "https://deno.land/x/fp_ts@v2.11.4/MeetSemilattice.ts": "fa536ec9457eb75cac1d40aff1524bd0d51b0829e118225f75fc10e05d47aba5",
+    "https://deno.land/x/fp_ts@v2.11.4/Monad.ts": "7fe452a98d61c14e487e6e033018019c502af91523feb5172df5315e2b8081ec",
+    "https://deno.land/x/fp_ts@v2.11.4/MonadThrow.ts": "fe9e6e489a4865655f754412026ecfe3bb2cb69e7aee6988ed4f07264724c3d6",
+    "https://deno.land/x/fp_ts@v2.11.4/Monoid.ts": "3e83956dfefa349d3236e14d5dff80dbc1e8c2f6e882a105733597f096fbb0e0",
+    "https://deno.land/x/fp_ts@v2.11.4/NaturalTransformation.ts": "2b15bcab7ef3ce9006132edf39e0574acdfa4c711224fc34deb31d6a6939c1d6",
+    "https://deno.land/x/fp_ts@v2.11.4/NonEmptyArray.ts": "d0c3bfe23813b5c2c1ddfdcdc89ef3da930eb0557118bfad505cbeaa0ee97795",
+    "https://deno.land/x/fp_ts@v2.11.4/Option.ts": "c16c369636613a20d192ae4d3defe43830669fc3587f2114b6c0ebc48969a0ce",
+    "https://deno.land/x/fp_ts@v2.11.4/Ord.ts": "198287f88301a0a0d24e13777cc48ba8d1e0aed14acd69bdb0869da44717943b",
+    "https://deno.land/x/fp_ts@v2.11.4/Ordering.ts": "0fff70e5459a950b8729d046550c6d5ec7680451f578b632ff8cc6bf44f3671f",
+    "https://deno.land/x/fp_ts@v2.11.4/Pointed.ts": "a7a7f9fa80f7e22e108c60acef9b863a7e2d6e1d4dc4f62c8126a3cc343dc7b5",
+    "https://deno.land/x/fp_ts@v2.11.4/Predicate.ts": "3929a868e4dd9b8a1f82c2f99b9c9fb63d94a8ded67c45179698cf6cb6f4621d",
+    "https://deno.land/x/fp_ts@v2.11.4/ReadonlyArray.ts": "f60df1d0449d7c5d3582313758ac035fffd1335b966cc1007d679dc8ac5d9369",
+    "https://deno.land/x/fp_ts@v2.11.4/ReadonlyNonEmptyArray.ts": "d3de7798ae111af3546b92d4c88704b8711ffdec5f3ac012afc9536fec5d53b8",
+    "https://deno.land/x/fp_ts@v2.11.4/ReadonlyRecord.ts": "4b4583f2a8ca504f082bf32859f7bd9ebcba1f70c67a2fec734aaeaf68f395fa",
+    "https://deno.land/x/fp_ts@v2.11.4/Refinement.ts": "a2ced42de715df56c696887cfff37954276c258801094d9da7e6946ec141c56b",
+    "https://deno.land/x/fp_ts@v2.11.4/Ring.ts": "3a213df2ab441cc58c785d7d0cb9448d8f9d06fe908602dbe158bfa4a0d80d55",
+    "https://deno.land/x/fp_ts@v2.11.4/Semigroup.ts": "ee41cf3555b4e5032ffeee6e89684999f6a203fc5624bcbc7606246bca889ce9",
+    "https://deno.land/x/fp_ts@v2.11.4/Semiring.ts": "d5eda77b6145fd283af1e011ab1b7dce6b95c7e4f57b77c3ce54e841640f9814",
+    "https://deno.land/x/fp_ts@v2.11.4/Separated.ts": "c63363255070370d173df9178c6bf482fcdaa11da20bb9240e02dd9c07b8b875",
+    "https://deno.land/x/fp_ts@v2.11.4/Show.ts": "a6642d3f63dc2a4860a0fbbb731263e6041ea73b6bedfc3fc0052e6ef23d286b",
+    "https://deno.land/x/fp_ts@v2.11.4/Traversable.ts": "1f0c800b803b6337dec88b38b9301cb1e44c7dd074b24c4ed8a8e2d49d485e03",
+    "https://deno.land/x/fp_ts@v2.11.4/TraversableWithIndex.ts": "58142b89772592879a2d81279dae448a5585c3cd464fea1212b11766c1e65da8",
+    "https://deno.land/x/fp_ts@v2.11.4/Unfoldable.ts": "a5434907429327fb1b11578e21fb703840045acbee321ac7c5f20bcb5c9a3773",
+    "https://deno.land/x/fp_ts@v2.11.4/Witherable.ts": "56c9aa09d5dfacf6d012a35fc3d1ec912094bd0fe89b87e909d2af4054ad6fdc",
+    "https://deno.land/x/fp_ts@v2.11.4/Zero.ts": "1a439e721b562321fe0f8419cab7ad3f8380f93ed266387a145d62c1b78fd822",
+    "https://deno.land/x/fp_ts@v2.11.4/function.ts": "5f80016e6c379b6041ea468d940b8c6d4b5e4e40a9fed8c240aa518dedced841",
+    "https://deno.land/x/fp_ts@v2.11.4/internal.ts": "a879994586e35f2ca16c976038569f0f0d00492e20767fe40e94055e9fadf985",
+    "https://deno.land/x/fp_ts@v2.11.4/number.ts": "65a126dbea9b2172448b4f4be57927b807e54c0c6c742c5f0482f6ca3ccb08ac",
+    "https://deno.land/x/fp_ts@v2.11.4/string.ts": "85843345b77b69ca9b4bb489a5ba997e58cb4840024b4cbf772193edb65efd03",
     "https://deno.land/x/hono@v4.3.10/adapter/deno/serve-static.ts": "db226d30f08f1a8bb77653ead42a911357b2f8710d653e43c01eccebb424b295",
     "https://deno.land/x/hono@v4.3.10/client/client.ts": "dcda3887257fa3164db7b32c56665c6e757f0ef047a14f3f9599ef41725c1525",
     "https://deno.land/x/hono@v4.3.10/client/index.ts": "30def535310a37bede261f1b23d11a9758983b8e9d60a6c56309cee5f6746ab2",
