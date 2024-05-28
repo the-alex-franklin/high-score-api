@@ -4,7 +4,7 @@ import { connect } from 'mongoose';
 import { Score } from "./score.model.ts";
 import { env } from "./env.ts";
 import { z } from 'zod';
-import Try from 'fp-try';
+import { Try } from 'fp-try';
 
 const app = new Hono();
 app.use(cors());

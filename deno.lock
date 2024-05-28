@@ -2,12 +2,12 @@
   "version": "3",
   "packages": {
     "specifiers": {
-      "jsr:@2or3godzillas/fp-try": "jsr:@2or3godzillas/fp-try@1.1.0",
+      "jsr:@2or3godzillas/fp-try": "jsr:@2or3godzillas/fp-try@1.1.1",
       "npm:mongoose": "npm:mongoose@8.4.0"
     },
     "jsr": {
-      "@2or3godzillas/fp-try@1.1.0": {
-        "integrity": "1bd1d8c5ef281dec2a5c74592cb57f9a70a0c8a3e522b1d4ade8fcc2f9ab67cd"
+      "@2or3godzillas/fp-try@1.1.1": {
+        "integrity": "aea8153f67443af53c416ec0d3082a1046920bfe70631a659f3d78d03867cb1a"
       }
     },
     "npm": {
