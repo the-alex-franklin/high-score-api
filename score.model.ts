@@ -1,10 +1,10 @@
-import { Schema, model } from 'mongoose';
+import { model, Schema } from "mongoose";
 
 const scoreSchema = new Schema({
   username: { type: String, required: true, unique: true },
   score: { type: Number, required: true },
 }, {
-  versionKey: false
+  versionKey: false,
 });
 
-export const Score = model('Score', scoreSchema);
+export const Score = model("Score", scoreSchema);

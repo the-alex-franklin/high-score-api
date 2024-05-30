@@ -10,25 +10,28 @@ import { flow } from "fp-ts/function.ts";
 const app = new Hono();
 app.use(cors());
 
-// deno-fmt-ignore
 connect(`mongodb+srv://${env.MONGO_ATLAS_USERNAME}:${env.MONGO_ATLAS_PASSWORD}@cluster0.ycjf2yc.mongodb.net/high-score`)
   .then(() => console.log("Connected to MongoDB"))
   .catch(console.error);
 
-app.get("/", (c) => c.text("Hello from backend!"));
+app.get("/", (c) => (
+  c.text(
+    JSON.stringify({ status: "up", timestamp: new Date().toString() }, null, 2),
+  )
+));
 
 app.post("/new-high-score", async (c) => {
-  const body: unknown = await c.req.json();
+  const body = await c.req.json<unknown>();
 
-  const result = Try(() =>
+  const result = Try(() => (
     z.object({
       username: z.string().min(1).transform(flow(
-        (x) => x.toLowerCase().trim(),
+        (x) => x.trim().toLowerCase(),
         (x) => x.charAt(0).toUpperCase() + x.slice(1),
       )),
       score: z.coerce.number().min(1),
     }).parse(body)
-  );
+  ));
 
   if (result.failure) return c.json({ message: "Invalid request body" }, 400);
   const { username, score } = result.data;
@@ -50,12 +53,6 @@ app.get("/all-scores", async (c) => {
   const scores = await Score.find().sort({ score: "desc" }).exec();
 
   return c.json({ scores });
-});
-
-app.get("/top-three", async (c) => {
-  const top_three = await Score.find().sort({ score: "desc" }).limit(3).exec();
-
-  return c.json({ top_three });
 });
 
 Deno.serve({ port: 3000 }, app.fetch);

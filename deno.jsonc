@@ -11,6 +11,9 @@
     "fp-try": "jsr:@2or3godzillas/fp-try",
     "fp-ts/": "https://deno.land/x/fp_ts@v2.11.4/"
   },
+  "fmt": {
+    "lineWidth": 120
+  },
   "deploy": {
     "project": "451750d9-2812-4041-962b-d531c676873b",
     "exclude": [
