@@ -10,7 +10,7 @@ import { flow } from "fp-ts/function.ts";
 const app = new Hono();
 app.use(cors());
 
-connect(`mongodb+srv://${env.MONGO_ATLAS_USERNAME}:${env.MONGO_ATLAS_PASSWORD}@cluster0.ycjf2yc.mongodb.net/high-score`)
+connect(`${env.MONGO_ATLAS_URL}/high-score`)
   .then(() => console.log("Connected to MongoDB"))
   .catch(console.error);
 
